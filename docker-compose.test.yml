@@ -1,0 +1,17 @@
+version: '3'
+services:
+  backend:
+    restart: always
+    container_name: testTaskReverseDevelopment
+    build:
+      context: .
+      dockerfile: Dockerfile
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1G"
+        max-file: "20"
+    ports:
+      - "80:80"
+
+#можно прокинуть properties через volumes если требуется
